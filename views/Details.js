@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import {Text, View, StyleSheet, ImageBackground} from 'react-native';
-import {ScrollView} from 'react-native-gesture-handler';
+import {Text, View, StyleSheet, ImageBackground, Button} from 'react-native';
+import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Card from './Card';
 import LabController from '../controllers/LabController';
@@ -34,6 +34,11 @@ export default class Details extends Component {
     const lab_data = this.props.route.params.lab_data;
     this.props.navigation.setOptions({
       title: lab_data.lab_name,
+      headerRight: () => (
+        <TouchableOpacity style={styles.likenav} onPress={()=>{}}>
+          <Icon name="heart" size={20} color="#4d59f7" />
+        </TouchableOpacity>
+      ),
     });
 
     return (
@@ -293,4 +298,9 @@ const styles = StyleSheet.create({
   LabCanCellText: {
     marginBottom: 5,
   },
+  likenav:{
+    marginRight:8,
+    padding:10,
+    borderRadius:50
+  }
 });
