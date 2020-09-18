@@ -4,6 +4,7 @@ import {ScrollView, TouchableOpacity} from 'react-native-gesture-handler';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import Card from './Card';
 import LabController from '../controllers/LabController';
+import AsyncStorage from '@react-native-community/async-storage';
 
 export default class Details extends Component {
   state = {
@@ -12,8 +13,6 @@ export default class Details extends Component {
   //Define your componentDidMount lifecycle hook that will retrieve data.
   //Also have the async keyword to indicate that it is asynchronous.
   async componentDidMount() {
- 
-    
     //Have a try and catch block for catching errors.
     try {
       //Assign the promise unresolved first then get the data using the json method.
@@ -29,13 +28,27 @@ export default class Details extends Component {
       console.log('Error fetching data-----------', err);
     }
   }
+  saveItem() {
+    var labdata = this.props.route.params.lab_data;
+    AsyncStorage.setItem(
+      'liked_' + labdata.id,
+      JSON.stringify(labdata),
+      err => {
+        alert('SAUVEGARDÉ AVEC SUCCÈS');
+      },
+    );
+  }
   render() {
     const title = this.props.route.params.foo;
     const lab_data = this.props.route.params.lab_data;
     this.props.navigation.setOptions({
       title: lab_data.lab_name,
       headerRight: () => (
-        <TouchableOpacity style={styles.likenav} onPress={()=>{}}>
+        <TouchableOpacity
+          style={styles.likenav}
+          onPress={() => {
+            this.saveItem();
+          }}>
           <Icon name="heart" size={20} color="#4d59f7" />
         </TouchableOpacity>
       ),
@@ -269,7 +282,6 @@ const styles = StyleSheet.create({
   },
   LabNameStyle: {
     fontSize: 16,
-    textTransform: 'capitalize',
   },
   SubLabName: {
     fontSize: 12,
@@ -298,9 +310,9 @@ const styles = StyleSheet.create({
   LabCanCellText: {
     marginBottom: 5,
   },
-  likenav:{
-    marginRight:8,
-    padding:10,
-    borderRadius:50
-  }
+  likenav: {
+    marginRight: 8,
+    padding: 10,
+    borderRadius: 50,
+  },
 });

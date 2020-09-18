@@ -14,6 +14,7 @@ import {StatusBar} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 import {createStackNavigator} from '@react-navigation/stack';
 import Splash from './views/Splash';
+import Liked from './views/Liked';
 
 const Tab = createBottomTabNavigator();
 
@@ -82,7 +83,7 @@ export default class App extends React.Component {
               },
             }}>
             <Tab.Screen name="Home" component={Home} />
-            <Tab.Screen name="Liked" component={Home} />
+            <Tab.Screen name="Liked" component={Liked} />
             {/* <Tab.Screen name="Blog" component={Home} /> */}
             <Tab.Screen name="Profile" component={Home} />
           </Tab.Navigator>
