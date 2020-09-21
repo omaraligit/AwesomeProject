@@ -1,4 +1,4 @@
-package com.awesomeproject;
+package com.snpdmmaroc.snpdm;
 
 import com.facebook.react.ReactActivity;
 

@@ -44,8 +44,8 @@ def flipper_post_install(installer)
   end
 end
 
-target 'AwesomeProject' do
-  # Pods for AwesomeProject
+target 'SNPDM' do
+  # Pods for SNPDM
   pod 'FBLazyVector', :path => "../node_modules/react-native/Libraries/FBLazyVector"
   pod 'FBReactNativeSpec', :path => "../node_modules/react-native/Libraries/FBReactNativeSpec"
   pod 'RCTRequired', :path => "../node_modules/react-native/Libraries/RCTRequired"
@@ -79,7 +79,7 @@ target 'AwesomeProject' do
 
   pod 'RNVectorIcons', :path => '../node_modules/react-native-vector-icons'
 
-  target 'AwesomeProjectTests' do
+  target 'SNPDMTests' do
     inherit! :complete
     # Pods for testing
   end
@@ -96,10 +96,10 @@ target 'AwesomeProject' do
   end
 end
 
-target 'AwesomeProject-tvOS' do
-  # Pods for AwesomeProject-tvOS
+target 'SNPDM-tvOS' do
+  # Pods for SNPDM-tvOS
 
-  target 'AwesomeProject-tvOSTests' do
+  target 'SNPDM-tvOSTests' do
     inherit! :search_paths
     # Pods for testing
   end

@@ -85,7 +85,7 @@ export default class App extends React.Component {
             <Tab.Screen name="Home" component={Home} />
             <Tab.Screen name="Liked" component={Liked} />
             {/* <Tab.Screen name="Blog" component={Home} /> */}
-            <Tab.Screen name="Profile" component={Home} />
+            {/* <Tab.Screen name="Profile" component={Home} /> */}
           </Tab.Navigator>
         </NavigationContainer>
       );

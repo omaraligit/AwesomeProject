@@ -1,11 +1,5 @@
 import React, {Component} from 'react';
-import {
-  Text,
-  View,
-  TouchableOpacity,
-  FlatList,
-  StyleSheet,
-} from 'react-native';
+import {Text, View, TouchableOpacity, FlatList, StyleSheet} from 'react-native';
 import LabController from '../controllers/LabController';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
@@ -18,7 +12,8 @@ export default class SearchResult extends Component {
   //Also have the async keyword to indicate that it is asynchronous.
   async componentDidMount() {
     this.props.navigation.setOptions({
-      title: this.props.route.params.finderText,
+      title:
+        'résultats de recherche "' + this.props.route.params.finderText + '"',
     });
 
     //Have a try and catch block for catching errors.

@@ -1,7 +1,7 @@
 import Controller from './Controller';
 const LIMIT_FINDER = 10;
 export default class LabController extends Controller {
-  uribase = 'http://10.0.2.2:8000/api/';
+  uribase = 'http://snpdmaroc.com/api/';
   getCadCam(limited = LIMIT_FINDER) {
     return fetch(this.uribase + 'getCad_Labs?limit=' + limited, {
       method: 'GET',
