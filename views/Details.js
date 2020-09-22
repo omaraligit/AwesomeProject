@@ -86,7 +86,7 @@ export default class Details extends Component {
                 <Text style={[styles.LabCanCellText]}>
                   Prothèses Conjointes
                 </Text>
-                {lab_data.lab_pc == '1' ? (
+                {lab_data.lab_pc == 'on' ? (
                   <Icon name="check" size={20} color="#4d59f7" />
                 ) : (
                   <Icon name="times" size={20} color="red" />
@@ -94,7 +94,7 @@ export default class Details extends Component {
               </View>
               <View style={[styles.LabCanCell]}>
                 <Text style={[styles.LabCanCellText]}>Prothèses Adjointes</Text>
-                {lab_data.lab_pa == '1' ? (
+                {lab_data.lab_pa == 'on' ? (
                   <Icon name="check" size={20} color="#4d59f7" />
                 ) : (
                   <Icon name="times" size={20} color="red" />
@@ -108,7 +108,7 @@ export default class Details extends Component {
                   {borderRightWidth: 1, borderColor: '#eaedf2'},
                 ]}>
                 <Text style={[styles.LabCanCellText]}>Orthodontie</Text>
-                {lab_data.lab_op == '1' ? (
+                {lab_data.lab_op == 'on' ? (
                   <Icon name="check" size={20} color="#4d59f7" />
                 ) : (
                   <Icon name="times" size={20} color="red" />
@@ -116,7 +116,7 @@ export default class Details extends Component {
               </View>
               <View style={styles.LabCanCell}>
                 <Text style={[styles.LabCanCellText]}>CAD/CAM</Text>
-                {lab_data.lab_cad == '1' ? (
+                {lab_data.lab_cad == 'on' ? (
                   <Icon name="check" size={20} color="#4d59f7" />
                 ) : (
                   <Icon name="times" size={20} color="red" />
